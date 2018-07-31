@@ -22,17 +22,11 @@ let readRecord$ = function (model: any, query: any, projection?: any): Promise<A
     });
 };
 
-let updateRecord$ = function (model: any, query: any, data: any, changes: any): Promise<any> {
-    let record = new model(data);
-    // let validationError =
+let updateRecord$ = function (model: any, query: any, changes: any): Promise<any> {
     return new Promise((resolve, reject) => {
-        record.validate(function (err: any) {
-            return err ? reject(documentValidatorErrors(err)) : resolve();
-        });
-    })
-        .then(() => {
             model.update(query, changes, {multi: false}, function (err: any, doc: any) {
                 if (err) throw (new Error(app_Error_Code_Enum.CANNOT_ACCESS_DB.toString()));
+                resolve(doc);
             });
         });
 

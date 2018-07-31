@@ -4,7 +4,9 @@
 enum app_Error_Code_Enum {
     SUCCESS,
     CLIENT_INVALID_USER,
-    CANNOT_ACCESS_DB
+    CLIENT_INVALID_PASSWORD,
+    CANNOT_ACCESS_DB,
+    ROUTE_NOT_FOUND,
 }
 export interface IErrorDetail {
     statusCode: string;
@@ -21,12 +23,18 @@ let app_Error_Code_Tuple: [app_Error_Code_Enum, IErrorDetail][] =
             statusCode: "422",
             description: app_Error_Code_Enum.CLIENT_INVALID_USER.toString()
         }],
+        [app_Error_Code_Enum.CLIENT_INVALID_PASSWORD, {
+            statusCode: "422",
+            description: app_Error_Code_Enum.CLIENT_INVALID_PASSWORD.toString()
+        }],
         [app_Error_Code_Enum.CANNOT_ACCESS_DB, {
             statusCode: "422",
             description: app_Error_Code_Enum.CANNOT_ACCESS_DB.toString()
         }],
-
-
+        [app_Error_Code_Enum.ROUTE_NOT_FOUND, {
+            statusCode: "404",
+            description: app_Error_Code_Enum.ROUTE_NOT_FOUND.toString()
+        }],
     ];
 
 let app_Error_Code_Map =

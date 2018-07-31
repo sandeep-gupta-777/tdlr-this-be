@@ -5,5 +5,6 @@ export function sendRes(req: Request, res: Response) {
     let error_code = res.locals.err_code;
     let errorDetail:IErrorDetail = app_Error_Code_Map.get(error_code);
     errorDetail.body = res.locals.body;
-    res.send(errorDetail);
+    let statusCode = Number(errorDetail.statusCode);
+    res.status(statusCode).send(errorDetail);
 }
