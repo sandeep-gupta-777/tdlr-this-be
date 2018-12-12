@@ -17,23 +17,23 @@ let app_Error_Code_Tuple: [app_Error_Code_Enum, IErrorDetail][] =
     [
         [app_Error_Code_Enum.SUCCESS, {
             statusCode: "200",
-            description: app_Error_Code_Enum.SUCCESS.toString()
+            description: app_Error_Code_Enum.SUCCESS
         }],
         [app_Error_Code_Enum.CLIENT_INVALID_USER, {
             statusCode: "422",
-            description: app_Error_Code_Enum.CLIENT_INVALID_USER.toString()
+            description: app_Error_Code_Enum.CLIENT_INVALID_USER
         }],
         [app_Error_Code_Enum.CLIENT_INVALID_PASSWORD, {
             statusCode: "422",
-            description: app_Error_Code_Enum.CLIENT_INVALID_PASSWORD.toString()
+            description: app_Error_Code_Enum.CLIENT_INVALID_PASSWORD
         }],
         [app_Error_Code_Enum.CANNOT_ACCESS_DB, {
             statusCode: "422",
-            description: app_Error_Code_Enum.CANNOT_ACCESS_DB.toString()
+            description: app_Error_Code_Enum.CANNOT_ACCESS_DB
         }],
         [app_Error_Code_Enum.ROUTE_NOT_FOUND, {
             statusCode: "404",
-            description: app_Error_Code_Enum.ROUTE_NOT_FOUND.toString()
+            description: app_Error_Code_Enum.ROUTE_NOT_FOUND
         }],
     ];
 

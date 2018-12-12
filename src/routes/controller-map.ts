@@ -1,4 +1,4 @@
-import { login, notFound, signup } from "../controller";
+import { login, notFound, signup, test1 } from "../controller";
 import { createComment, deleteComment, readComment, readComments, updateComment } from "../controller/comments";
 import { createNote, deleteNote, readNote, readNotes, updateNote } from "../controller/notes";
 import { IController } from "../controller/interface";
@@ -8,6 +8,7 @@ import { NOTFOUND } from "dns";
 import { toggleLike } from "../controller/multiple-models";
 
 export const apiControllers: { api: string, verb: string, controller: IController }[] = [
+    {api: '/health', verb: 'get', controller: test1},
     {api: '/login', verb: 'post', controller: login},
     {api: '/signup', verb: 'put', controller: signup},
 

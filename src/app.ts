@@ -74,7 +74,7 @@ app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
-
+9
 // app.use((req, res, next) => {
 //   // After successful login, redirect back to the intended page
 //   if (!req.user &&

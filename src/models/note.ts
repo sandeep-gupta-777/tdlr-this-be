@@ -25,6 +25,7 @@ export interface INote extends mongoose.Document {
     note_author_name: string,
     note_author_avatar_url: string,
     note_comments: IComment[],
+    note_commented_user_ids:string[],
     note_liked_user_ids:string[]
 }
 
@@ -39,7 +40,7 @@ const noteSchema = new mongoose.Schema({
     note_author_name: String,
     note_author_avatar_url: String,
     note_liked_user_ids:[String],
-
+    note_commented_user_ids:[String],
     note_comments: [{
         comment_title: String,
         comment_body_text: String,

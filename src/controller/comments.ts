@@ -7,7 +7,7 @@ import noteModel from "../models/note";
 export let createComment: IController =  async function(req: Request, res: Response, next: NextFunction) {
     try {
         let query= {_id:req.query.post_id};
-        let changes = {$push: { note_comments: req.body}};
+        let changes = {$push: { note_comments: req.body, note_commented_user_ids:req.body.comment_author_id}};
         let response = await crud.updateRecord$(noteModel, query, changes);
         res.locals.body = response;
         res.locals.err_code = app_Error_Code_Enum.SUCCESS;

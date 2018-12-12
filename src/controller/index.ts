@@ -5,6 +5,11 @@ import { IUser, userModel } from "../models/user";
 import { app_Error_Code_Enum } from "../constants/error-list";
 import noteModel from "../models/note";
 
+export let test1: IController =  async function(req: Request, res: Response, next: NextFunction) {
+    res.send('healthy')
+    next();
+};
+
 export let login: IController =  async function(req: Request, res: Response, next: NextFunction) {
     let query = {user_email:req.body.user_email};
     let response:IUser[] =  await crud.readRecord$(userModel, query);
